@@ -1,10 +1,7 @@
 import tkinter as tk
 
 def create_circle(x, y, r, canvasName, **kwargs): #center coordinates, radius
-    x0 = x - r
-    y0 = y - r
-    x1 = x + r
-    y1 = y + r
+    x0,y0,x1,y1 = x - r, y - r, x + r ,y + r
     return canvasName.create_oval(x0, y0, x1, y1, **kwargs)
 
 def create_figure():
@@ -48,5 +45,16 @@ for y in range(8):
     else:
         color = 'white'
         
+with open("nacitanie3.txt", "r") as reader:
+    subor = reader.read().split()
+
+a = []
+for i in range(8):
+    pom = []
+    for j in range(8):
+        pom.append(int(subor[i*8+j]))
+    a.append(pom)
+print(a)
+
 create_figure()
 okno.mainloop()
