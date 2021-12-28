@@ -8,6 +8,10 @@ def create_circle(x, y, r, canvasName, **kwargs): #center coordinates, radius
     y1 = y + r
     return canvasName.create_oval(x0, y0, x1, y1, **kwargs)
 
+
+
+
+
 def create_figure():
     create_circle(120,40, 30, canvas,  fill="black", outline="white", width=5)
     create_circle(280,40, 30, canvas,  fill="black", outline="white", width=5)
