@@ -4,13 +4,13 @@ def create_circle(x, y, r, canvasName, **kwargs): #center coordinates, radius
     x0,y0,x1,y1 = x - r, y - r, x + r ,y + r
     return canvasName.create_oval(x0, y0, x1, y1, **kwargs)
 
-def create_figures(a): 
+def create_figures(a):
     for i in range(len(a)):
         for j in range(len(a)):
             if a[i][j] == 5:
-                create_circle(i * 80 +40, j * 80 +40, 30, canvas, fill="red")
+                create_circle(j * 80 +40, i * 80 +40, 30, canvas, fill="red")
             elif a[i][j] == 7:
-                create_circle(i * 80 +40, j * 80 +40, 30, canvas, fill="white")
+                create_circle(j * 80 +40, i * 80 +40, 30, canvas, fill="white")
 
 velkost = 80
 okno = tk.Tk()
