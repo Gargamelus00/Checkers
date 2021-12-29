@@ -4,24 +4,13 @@ def create_circle(x, y, r, canvasName, **kwargs): #center coordinates, radius
     x0,y0,x1,y1 = x - r, y - r, x + r ,y + r
     return canvasName.create_oval(x0, y0, x1, y1, **kwargs)
 
-def create_figure():
-    create_circle(120,40, 30, canvas,  fill="red", width=5)
-    create_circle(280,40, 30, canvas,  fill="red", width=5)
-    create_circle(440,40, 30, canvas,  fill="red", width=5)
-    create_circle(600,40, 30, canvas,  fill="red", width=5)
-    create_circle(40, 120, 30, canvas,  fill="red", width=5)
-    create_circle(200,120, 30, canvas,  fill="red", width=5)
-    create_circle(360,120, 30, canvas,  fill="red", width=5)
-    create_circle(520,120, 30, canvas,  fill="red", width=5)
-
-    create_circle(40, 600, 30, canvas,  fill="white")
-    create_circle(200, 600, 30, canvas,  fill="white")
-    create_circle(360, 600, 30, canvas,  fill="white")
-    create_circle(520, 600, 30, canvas,  fill="white")
-    create_circle(120,520, 30, canvas,  fill="white")
-    create_circle(280,520, 30, canvas,  fill="white")
-    create_circle(440,520, 30, canvas,  fill="white")
-    create_circle(600,520, 30, canvas,  fill="white")
+def create_figures(a): 
+    for i in range(len(a)):
+        for j in range(len(a)):
+            if a[i][j] == 5:
+                create_circle(i * 80 +40, j * 80 +40, 30, canvas, fill="red")
+            elif a[i][j] == 7:
+                create_circle(i * 80 +40, j * 80 +40, 30, canvas, fill="white")
 
 velkost = 80
 okno = tk.Tk()
@@ -47,7 +36,7 @@ for y in range(8):
         
 with open("nacitanie3.txt", "r") as reader:
     subor = reader.read().split()
-
+    
 a = []
 for i in range(8):
     pom = []
@@ -56,5 +45,5 @@ for i in range(8):
     a.append(pom)
 print(a)
 
-create_figure()
+create_figures(a)
 okno.mainloop()
