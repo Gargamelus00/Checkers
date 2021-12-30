@@ -1,4 +1,6 @@
 import tkinter as tk
+from tkinter import font
+from tkinter.constants import ANCHOR, CENTER
 
 def create_circle(x, y, r, canvasName, **kwargs): #center coordinates, radius
     x0,y0,x1,y1 = x - r, y - r, x + r ,y + r
@@ -20,12 +22,24 @@ def text():
         canvas.create_text(x,40,fill="black",font="Times 40",text="".join(list[i]))
     canvas.update
 
+def hrac1():
+    canvas.create_text(975, 100, text="Hráč č.1 zadajte svoj ťah",font="Times 15", width=225, fill="black")                                
+    a_text= canvas.create_text(840, 200, text="Zadajte pozíciu figurky, ktorou sa chcete posunúť:",font="Times 12", width=170, fill="black")  
+    a_Entry = tk.Entry(background="white", font="Times 30", justify=CENTER).place(x=775,y=235,width=100, height=100,)
+    b_text = canvas.create_text(1100, 200, text="Zadajte pozíciu, kam sa chcete dostať:",font="Times 12", width=170, fill="black")   
+    b_Entry = tk.Entry(background="white", font="Times 30", justify=CENTER).place(x=1050,y=235,width=100, height=100,) 
+
+def hrac2():
+    canvas.create_text(975, 100, text="Hráč č.2 zadajte svoj ťah",font="Times 15", width=225, fill="black")                                
+    a_text= canvas.create_text(840, 200, text="Zadajte pozíciu figurky, ktorou sa chcete posunúť:",font="Times 12", width=170, fill="black")  
+    a_Entry = tk.Entry(background="white", font="Times 30", justify=CENTER).place(x=775,y=235,width=100, height=100,)
+    b_text = canvas.create_text(1100, 200, text="Zadajte pozíciu, kam sa chcete dostať:",font="Times 12", width=170, fill="black")   
+    b_Entry = tk.Entry(background="white", font="Times 30", justify=CENTER).place(x=1050,y=235,width=100, height=100,) 
+    
+
 velkost = 80
-okno = tk.Tk()
-canvas = tk.Canvas(okno, width = 1220, height = 720)
-canvas.create_text(975, 100, text="Hráč číslo1 zadajte svoj ťah",font="Times 15", width=225, fill="black")                                
-a_text= canvas.create_text(840, 200, text="Zadajte pozíciu figurky, ktorou sa chcete posunúť:",font="Times 12", width=170, fill="black")  
-b_text = canvas.create_text(1100, 200, text="Zadajte pozíciu, kam sa chcete dostať:",font="Times 12", width=170, fill="black")          
+okno = tk.Tk()       
+canvas = tk.Canvas(okno, width = 1220, height = 720)  
 canvas.pack()
 color = 'white'
 
@@ -58,4 +72,6 @@ for i in range(8):
 
 create_figures(a)
 text()
+hrac1()
+hrac2()
 okno.mainloop()
