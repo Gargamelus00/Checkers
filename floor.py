@@ -8,20 +8,28 @@ def create_figures(a):
     for i in range(len(a)):
         for j in range(len(a)):
             if a[i][j] == 5:
-                create_circle(j * 80 +40, i * 80 +40, 30, canvas, fill="red")
+                create_circle(j * 80 +120, i * 80 +120, 30, canvas, fill="red")
             elif a[i][j] == 7:
-                create_circle(j * 80 +40, i * 80 +40, 30, canvas, fill="white")
+                create_circle(j * 80 +120, i * 80 +120, 30, canvas, fill="white")
+
+def text():
+    list = ['A','B','C','D','E','F','G','H','1','2','3','4','5','6','7','8']
+    for i in range(8):
+        x = 120+i*80
+        canvas.create_text(40,x,fill="black",font="Times 40",text="".join(list[i+8]))
+        canvas.create_text(x,40,fill="black",font="Times 40",text="".join(list[i]))
+    canvas.update
 
 velkost = 80
 okno = tk.Tk()
-canvas = tk.Canvas(okno, width = 640, height = 640)
+canvas = tk.Canvas(okno, width = 720, height = 720)
 canvas.pack()
 color = 'white'
 
 for y in range(8):
     for x in range(8):
-        x1 = x*velkost
-        y1 = y*velkost
+        x1 = 80+x*velkost
+        y1 = 80+y*velkost
         x2 = x1 + velkost
         y2 = y1 + velkost
         canvas.create_rectangle((x1, y1, x2, y2), fill=color)
@@ -33,7 +41,8 @@ for y in range(8):
         color = 'black'
     else:
         color = 'white'
-        
+
+
 with open("nacitanie3.txt", "r") as reader:
     subor = reader.read().split()
     
@@ -43,7 +52,7 @@ for i in range(8):
     for j in range(8):
         pom.append(int(subor[i*8+j]))
     a.append(pom)
-print(a)
 
 create_figures(a)
+text()
 okno.mainloop()
