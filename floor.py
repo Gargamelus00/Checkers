@@ -22,10 +22,10 @@ def text():
 
 velkost = 80
 okno = tk.Tk()
-canvas = tk.Canvas(okno, width = 720, height = 720)
+canvas = tk.Canvas(okno, width = 1220, height = 720)
 canvas.create_text(975, 100, text="Hráč číslo1 zadajte svoj ťah",font="Times 15", width=225, fill="black")                                
 a_text= canvas.create_text(840, 200, text="Zadajte pozíciu figurky, ktorou sa chcete posunúť:",font="Times 12", width=170, fill="black")  
-b_text = canvas.create_text(1100, 200, text="Zadajte pozíciu, kam sa chcete dostať:",font="Times 12", width=170, fill="black")            
+b_text = canvas.create_text(1100, 200, text="Zadajte pozíciu, kam sa chcete dostať:",font="Times 12", width=170, fill="black")          
 canvas.pack()
 color = 'white'
 
