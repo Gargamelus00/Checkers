@@ -12,7 +12,7 @@ def create_figures(a):
             if a[i][j] == 5:
                 create_circle(j * 80 +120, i * 80 +120, 30, canvas, fill="red")
             elif a[i][j] == 7:
-                create_circle(j * 80 +120, i * 80 +120, 30, canvas, fill="white")
+                create_circle(j * 80 +120, i * 80 +120, 30, canvas, fill="blue")
 
 def text():
     list = ['A','B','C','D','E','F','G','H','1','2','3','4','5','6','7','8']
