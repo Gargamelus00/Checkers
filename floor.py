@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import font
-from tkinter.constants import ANCHOR, CENTER
+from tkinter.constants import CENTER
 
 def create_circle(x, y, r, canvasName, **kwargs): #center coordinates, radius
     x0,y0,x1,y1 = x - r, y - r, x + r ,y + r
