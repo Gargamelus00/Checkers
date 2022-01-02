@@ -39,7 +39,8 @@ def hrac2():
 
 velkost = 80
 okno = tk.Tk()
-canvas = tk.Canvas(okno, width = 1220, height = 720)  
+canvas = tk.Canvas(okno, width = 1220, height = 720) 
+btn = tk.Button(text='BUTTON', bd='10',).place(x=912, y=370, width=100,height=50) 
 canvas.pack()
 color = 'white'
 
