@@ -423,7 +423,12 @@ def spracuj2():
 
 velkost = 80
 okno = tk.Tk()
+<<<<<<< HEAD
 canvas = tk.Canvas(okno, width = 1220, height = 720)
+=======
+canvas = tk.Canvas(okno, width = 1220, height = 720) 
+btn = tk.Button(text='BUTTON', bd='10',).place(x=912, y=370, width=100,height=50) 
+>>>>>>> 8503bae14b2a1295f013eb64345e0ef133de0d57
 canvas.pack()
 
 
