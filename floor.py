@@ -384,7 +384,7 @@ def pocet_figurok():
             if a[i][j] == 5 or a[i][j] == 15:
                 cervene = cervene + 1
             elif a[i][j] == 7 or a[i][j] == 17:
-               zlte = zlte + 1
+                zlte = zlte + 1
     return cervene,zlte
 
 
